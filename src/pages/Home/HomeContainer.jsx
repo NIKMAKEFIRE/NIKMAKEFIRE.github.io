@@ -5,21 +5,19 @@ import { NavLink } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import Preloader from '../../UI/Preloader/Preloader';
+import { useDispatch, useSelector } from 'react-redux';
+import { getImagesFetchAC } from '../../redux/actions/actionCreator';
 
 const HomeContainer = () => {
-
-    const [images, setImages] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
+
+    const dispatch = useDispatch();
+    const images = useSelector(state => state.getImages.images)
 
     React.useEffect(() => {
         setIsLoading(true)
         setTimeout(() => {
-            axios.get('https://jsonplaceholder.typicode.com/photos')
-                .then(response => {
-                    const images = response.data.slice(0, 6);
-                    setImages(images)
-                })
-                .catch(error => console.log(error))
+            dispatch(getImagesFetchAC(images))
             setIsLoading(false)
         }, 700)
     }, [])

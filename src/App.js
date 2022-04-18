@@ -6,7 +6,6 @@ import Details from './pages/Details/Details';
 import Home from './pages/Home/Home';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 
-
 function App() {
   return (
     <div className="App">
