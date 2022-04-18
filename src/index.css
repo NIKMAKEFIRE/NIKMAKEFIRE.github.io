@@ -11,33 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.card__image {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  cursor: pointer;
-}
-
-.card__btn {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  visibility: hidden;
-  opacity: 0.5;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.card__btn::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  transform: translateX(-50%);
-}
-
-.card__image:hover .card__btn {
-  top: -130px;
-  visibility: visible;
-  opacity: 1;
-}

@@ -17,7 +17,6 @@ const HomeContainer = () => {
             axios.get('https://jsonplaceholder.typicode.com/photos')
                 .then(response => {
                     const images = response.data.slice(0, 6);
-                    console.log(response.data)
                     setImages(images)
                 })
                 .catch(error => console.log(error))
@@ -34,12 +33,12 @@ const HomeContainer = () => {
                         <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
                             {
                                 images && images.map(image => {
-                                    const { id, thumbnailUrl, title } = image
+                                    const { id, thumbnailUrl } = image
                                     return (
                                         <div key={id}>
                                             <Tippy interactive={true} interactiveBorder={20} delay={100}
                                             content={<NavLink to="/details"><button className="btn btn-primary">Подробнее</button></NavLink>}>
-                                                <img id={id} title={title} src={thumbnailUrl} />
+                                                <img src={thumbnailUrl} />
                                             </Tippy>
                                         </div>
                                     )

@@ -1,11 +1,8 @@
 import React from 'react'
 import HomeContainer from './HomeContainer'
 import { Card, Container } from 'react-bootstrap';
-import Preloader from '../../UI/Preloader/Preloader';
 
 const Home = () => {
-
-  // const [isLoading, setIsLoading] = React.useState(false);
 
   return (
     <>
